@@ -21,7 +21,7 @@ Accuracy approval is not proof of understanding. Label simulated trials explicit
 
 - Help/gaps: AI assistance helped develop the brand direction and guide repository setup and documentation. The check interpretation was developed with assistance.
 
-- Evidence links / next step: [Issue #1](https://github.com/BryanF23/my-app-studio/issues/1); foundation checks passed, 2 APP-001 contract tests passed, and 2 Chromium browser journeys passed. Next: complete the PR and merge workflow.
+- Evidence links / next step: [Issue #1](https://github.com/BryanF23/my-app-studio/issues/1); foundation checks passed, 2 APP-001 contract tests passed, and 2 Chromium browser journeys passed. PR #2: https://github.com/BryanF23/my-app-studio/pull/2 (merged into main); GitHub check and windows jobs passed. Next: final review and close Issue #1.
 
 ## APP-002
 
