@@ -1,16 +1,20 @@
 {
-  "name": "Your Project",
-  "audience": "Not chosen yet",
-  "archetype": "Not chosen yet",
-  "promise": "Not chosen yet",
-  "headline": "A small idea. A real application.",
-  "summary": "This working page is your starting point. Give it a purpose and a brand, then build accounts and permissions one feature at a time.",
-  "voice": ["Not chosen yet"],
-  "design_direction": "Not chosen yet",
+  "name": "CreateSpace",
+  "audience": "Students and independent creators",
+  "archetype": "The Creator",
+  "promise": "A space where creators can showcase their work, share ideas, and get discovered.",
+  "headline": "Your creativity deserves to be seen.",
+  "summary": "Showcase your projects, share your ideas, and discover what others are creating.",
+  "voice": [
+    "Creative",
+    "Welcoming",
+    "Encouraging"
+  ],
+  "design_direction": "Modern creative platform with a dark navy background, purple accents, and clean typography.",
   "palette": {
-    "ink": "#182C34",
-    "paper": "#F6F5EF",
-    "accent": "#285A50",
-    "surface": "#FFFFFF"
+    "ink": "#F5F3FF",
+    "paper": "#0B1020",
+    "accent": "#9B7BFF",
+    "surface": "#171D32"
   }
 }
