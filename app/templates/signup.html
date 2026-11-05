@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Create an account · {{ brand.name }}{% endblock %}
+
+{% block content %}
+<section class="panel" aria-labelledby="signup-title">
+  <p class="eyebrow">Join CreateSpace</p>
+  <h1 id="signup-title">Create your account</h1>
+  <p>Start sharing your ideas and creative projects.</p>
+
+  {% if error %}
+    <p class="error" role="alert">{{ error }}</p>
+  {% endif %}
+
+  <form class="form-stack" method="post" action="/signup">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+
+    <label for="username">Username</label>
+    <input
+      id="username"
+      name="username"
+      type="text"
+      minlength="3"
+      maxlength="32"
+      autocomplete="username"
+      value="{{ username }}"
+      required
+    >
+
+    <label for="password">Password</label>
+    <input
+      id="password"
+      name="password"
+      type="password"
+      minlength="15"
+      maxlength="128"
+      autocomplete="new-password"
+      required
+    >
+
+    <button class="button" type="submit">Create account</button>
+  </form>
+
+  <p>Already have an account? <a href="/login">Log in</a></p>
+</section>
+{% endblock %}
