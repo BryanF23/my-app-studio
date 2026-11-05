@@ -38,10 +38,8 @@ AI-drafted task summary, not a transcript or grade. It may be public. Use actual
 
 ## APP-003
 
-- **Prediction:** Pending.
-- **Check interpretation:** Pending.
-- **Browser observation:** Pending.
-- **Keep decision:** Pending.
-- **Review:** Pending.
-- **Help/gaps:** Pending.
-- **Evidence links / next step:** Keep APP-002 before agreeing this lesson.
+- Prediction: I predicted that a regular member attempting to access an admin-only URL should be denied by the server. (Discussed before implementation.)
+- Check interpretation: The initial checks showed that the admin routes were missing because requests returned 404. After implementing the routes and role checks, all APP-003 contract and browser tests passed. I understand that authentication confirms who a user is, while authorization determines what that user can access.
+- Browser observation: I tested with an admin account, a regular member account, and a logged-out visitor. The admin could access the admin page and API, the member was denied access, and the logged-out visitor was denied access to protected resources.
+- Keep decision: I kept server-side role verification using the current database role so that being logged in alone does not grant administrator access.
+- Review: I reviewed `app/features/roles.py`, `app/security.py`, and `app/templates/admin.html` to understand how the API and webpage enforce administrator permissions.
