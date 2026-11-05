@@ -4,10 +4,10 @@ The durable agreement between learner and AI. Update only agreed decisions and a
 
 ## Current stage
 
-- **Current feature:** APP-001.
-- **Status:** APP-001 CreateSpace homepage implemented; full APP-001 checks passed. Learner evidence recorded and reviewed; APP-001 merged into main through PR #2.
-- **Next step:** Complete the final lesson review and close Issue #1.
-- **Implementation marker:** `studio.json` is set to `implemented_through: 1` after the APP-001 checks passed.
+- **Current feature:** APP-003.
+- **Status:** APP-001 and APP-002 implementation and local checks completed; APP-003 implementation and full local checks completed. APP-003 GitHub PR and merge are pending.
+- **Next step:** Publish APP-003 through a pull request, verify CI, and merge into main.
+- **Implementation marker:** `studio.json` is set to `implemented_through: 3` after APP-003 checks passed.
 
 This repository owns application code. Server/proxy changes and production deployment are outside these three local-development lessons. Prepared helpers are reusable foundations, not evidence that unfinished routes are implemented.
 
