@@ -88,13 +88,18 @@ def authenticate(request: Request) -> dict[str, str] | None:
 
 
 def require_user(request: Request) -> dict[str, str]:
-    """Reusable API dependency; HTML routes can explicitly redirect anonymous users."""
+    """Return public user information for an authenticated request."""
     user = authenticate(request)
     if user is None:
         raise HTTPException(
             401, "Please log in.", headers={"WWW-Authenticate": "Bearer"}
         )
-    return user
+
+    return {
+        "id": user["id"],
+        "username": user["username"],
+        "role": user["role"],
+    }
 
 
 def require_admin(request: Request) -> dict[str, str]:

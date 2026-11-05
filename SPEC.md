@@ -26,13 +26,13 @@ This repository owns application code. Server/proxy changes and production deplo
 
 ## APP-002 · Signup, login and logout
 
-**Scope:** add browser forms and REST behavior for member signup, login, a private dashboard and logout backed by SQLite. Reuse the prepared password/JWT/CSRF/session helpers; keep data local. New accounts cannot choose their role.
+**Scope:** Add browser forms and REST behavior for member signup, login, a private dashboard and logout backed by SQLite. Reuse the prepared password/JWT/CSRF/session helpers; keep data local. New accounts cannot choose their role.
 
 | Decision | Agreement |
 |---|---|
-| Expected public/private behavior and account flow | Pending |
-| Valid and rejected cases to demonstrate | Pending |
-| Own issue / branch / PR | Pending |
+| Expected public/private behavior and account flow | Visitors can sign up and log in. Anonymous requests to private resources are rejected; authenticated members can access their dashboard. Logout revokes the server-side session. Expected API behavior: `/api/me` returns 401 before login and 200 after successful login. |
+| Valid and rejected cases to demonstrate | Valid signup and login; duplicate username, malformed signup, extra signup fields, incorrect credentials, unauthenticated private request, missing CSRF token, and revoked/expired session. |
+| Own issue / branch / PR | [Issue #3](https://github.com/BryanF23/my-app-studio/issues/3) / `feature/app-002-accounts` / PR pending |
 
 **Keep when:** the agreed forms/API work; duplicate/invalid signup and wrong credentials are rejected; passwords are hashed; authentication uses validated, expiring JWTs with protected cookies and CSRF; private requests require a live session and logout revokes it. Full cumulative checks, AI review, actual learner contributions and GitHub state are recorded. This is not a production-security certification.
 
