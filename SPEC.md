@@ -1,8 +1,8 @@
-# App Studio decisions
+# App Studio Decisions
 
-The durable agreement between learner and AI. Update only agreed decisions and actual evidence; pending is a valid state. Keep explanations/help in [LEARNING.md](LEARNING.md), not a second copy here.
+The durable agreement between learner and AI. Update only agreed decisions and actual evidence; pending is a valid state. Keep explanations and help in [LEARNING.md](LEARNING.md), not a second copy here.
 
-## Current stage
+## Current Stage
 
 - **Current feature:** APP-003.
 - **Status:** APP-001 and APP-002 implementation and local checks completed; APP-003 implementation and full local checks completed. APP-003 GitHub PR and merge are pending.
@@ -11,22 +11,22 @@ The durable agreement between learner and AI. Update only agreed decisions and a
 
 This repository owns application code. Server/proxy changes and production deployment are outside these three local-development lessons. Prepared helpers are reusable foundations, not evidence that unfinished routes are implemented.
 
-## APP-001 · Branded homepage
+## APP-001 · Branded Homepage
 
-**Scope:** make the neutral FastAPI homepage express one chosen identity with a simple original SVG mark, coherent copy, navigation and shared style tokens. Keep account actions honest about their unfinished state.
+**Scope:** Make the neutral FastAPI homepage express one chosen identity with a simple original SVG mark, coherent copy, navigation, and shared style tokens. Keep account actions honest about their unfinished state.
 
 | Decision | Agreement |
 |---|---|
-| Visitor and concrete use situation | Students and independent creators showcasing digital projects, designs, artwork, and creative work |
+| Visitor and concrete use situation | Students and independent creators showcasing digital projects, designs, artwork, and creative work. |
 | Reused IS117 brand, or name / promise / primary archetype | CreateSpace / A space where creators can showcase their work, share ideas, and get discovered. / The Creator |
-| One visible choice and visitor benefit | Dark navy and purple visual identity with a prominent Explore projects call to action; predicts visitors will understand they can share creative work and feel encouraged to showcase their own projects. |
+| One visible choice and visitor benefit | Dark navy and purple visual identity with a prominent Explore Projects call to action; predicts visitors will understand they can share creative work and feel encouraged to showcase their own projects. |
 | Own issue / branch / PR | [Issue #1](https://github.com/BryanF23/my-app-studio/issues/1) / `feature/app-001-createspace-homepage` / [PR #2](https://github.com/BryanF23/my-app-studio/pull/2) — merged |
 
-**Keep when:** the agreed identity is visible and usable at desktop/narrow widths; full foundation + APP-001 checks pass; AI review and the learner's actual check interpretation/browser observation/keep reason are recorded; reviewed evidence and verified GitHub state are linked below.
+**Keep when:** The agreed identity is visible and usable at desktop and narrow widths; full foundation and APP-001 checks pass; AI review and the learner's actual check interpretation, browser observation, and keep reason are recorded; reviewed evidence and verified GitHub state are linked below.
 
-## APP-002 · Signup, login and logout
+## APP-002 · Signup, Login and Logout
 
-**Scope:** Add browser forms and REST behavior for member signup, login, a private dashboard and logout backed by SQLite. Reuse the prepared password/JWT/CSRF/session helpers; keep data local. New accounts cannot choose their role.
+**Scope:** Add browser forms and REST behavior for member signup, login, a private dashboard, and logout backed by SQLite. Reuse the prepared password/JWT/CSRF/session helpers; keep data local. New accounts cannot choose their role.
 
 | Decision | Agreement |
 |---|---|
@@ -34,13 +34,13 @@ This repository owns application code. Server/proxy changes and production deplo
 | Valid and rejected cases to demonstrate | Valid signup and login; duplicate username, malformed signup, extra signup fields, incorrect credentials, unauthenticated private request, missing CSRF token, and revoked/expired session. |
 | Own issue / branch / PR | [Issue #3](https://github.com/BryanF23/my-app-studio/issues/3) / `feature/app-002-accounts` / PR pending |
 
-**Keep when:** the agreed forms/API work; duplicate/invalid signup and wrong credentials are rejected; passwords are hashed; authentication uses validated, expiring JWTs with protected cookies and CSRF; private requests require a live session and logout revokes it. Full cumulative checks, AI review, actual learner contributions and GitHub state are recorded. This is not a production-security certification.
+**Keep when:** The agreed forms/API work; duplicate/invalid signup and wrong credentials are rejected; passwords are hashed; authentication uses validated, expiring JWTs with protected cookies and CSRF; private requests require a live session and logout revokes it. Full cumulative checks, AI review, actual learner contributions, and GitHub state are recorded. This is not a production-security certification.
 
-## APP-003 · Server-enforced roles
+## APP-003 · Server-Enforced Roles
 
-**Scope:** enforce a small member/admin boundary in the API and browser. Assign roles only through the trusted local terminal command; use current server-side permissions, including for an existing session after a role change.
+**Scope:** Enforce a small member/admin boundary in the API and browser. Assign roles only through the trusted local terminal command; use current server-side permissions, including for an existing session after a role change.
 
-| Visitor | Homepage | Member area | Admin area/API |
+| Visitor | Homepage | Member Area | Admin Area/API |
 |---|---|---|---|
 | Anonymous | Allowed | Login required | Login required |
 | Member | Allowed | Allowed | Forbidden |
@@ -48,20 +48,20 @@ This repository owns application code. Server/proxy changes and production deplo
 
 | Decision | Agreement |
 |---|---|
-| Intended admin-only result | Pending |
-| Actual allowed/denied request evidence | Pending |
-| Own issue / branch / PR | Pending |
+| Intended admin-only result | Only administrators can access the admin webpage and API. Members are denied; anonymous visitors must authenticate. |
+| Actual allowed/denied request evidence | Admin accessed `/admin` and `/api/admin`; member was denied; logged-out visitor was denied access to protected resources. |
+| Own issue / branch / PR | [Issue #5](https://github.com/BryanF23/my-app-studio/issues/5) / `app-003-admin-roles` / PR pending |
 
-**Keep when:** a direct request cannot bypass the role boundary, role changes take effect as specified, new signup remains member-only, and full cumulative checks plus AI review pass. Link the learner's actual interpretation/observation, reviewed record and verified GitHub result. Hidden navigation alone is insufficient.
+**Keep when:** A direct request cannot bypass the role boundary, role changes take effect as specified, new signup remains member-only, and full cumulative checks plus AI review pass. Link the learner's actual interpretation/observation, reviewed record, and verified GitHub result. Hidden navigation alone is insufficient.
 
 ## Evidence
 
-Link actual files/checks and the student's own issues/PRs. No fabricated URLs, customer research or claims that a timestamp proves learning.
+Link actual files/checks and the student's own issues/PRs. No fabricated URLs, customer research, or claims that a timestamp proves learning.
 
-| Feature | Files / own issue / PR | Actual checks and learner observations | Kept / GitHub state |
+| Feature | Files / Own Issue / PR | Actual Checks and Learner Observations | Kept / GitHub State |
 |---|---|---|---|
-| APP-001 | `app/brand.json`, `app/static/logo.svg`, `app/static/site.css`, `app/templates/home.html`; [Issue #1](https://github.com/BryanF23/my-app-studio/issues/1); [PR #2](https://github.com/BryanF23/my-app-studio/pull/2) — merged | Foundation checks passed; APP-001 contract tests: 2 passed; Chromium browser journeys: 2 passed. Learner browser observation and check interpretation recorded in LEARNING.md (interpretation developed with assistance). | Learner chose to keep the design; commit 374435b; PR #2 merged into main; both GitHub Actions jobs passed |
-| APP-002 | Pending | Unfinished; explicit contracts not yet passed | Pending |
-| APP-003 | Pending | Unfinished; explicit contracts not yet passed | Pending |
+| APP-001 | `app/brand.json`, `app/static/logo.svg`, `app/static/site.css`, `app/templates/home.html`; [Issue #1](https://github.com/BryanF23/my-app-studio/issues/1); [PR #2](https://github.com/BryanF23/my-app-studio/pull/2) — merged | Foundation checks passed; APP-001 contract tests: 2 passed; Chromium browser journeys: 2 passed. Learner browser observation and check interpretation recorded in `LEARNING.md` (interpretation developed with assistance). | Learner chose to keep the design; commit `374435b`; PR #2 merged into main; both GitHub Actions jobs passed. |
+| APP-002 | Pending | Unfinished; explicit contracts not yet passed. | Pending. |
+| APP-003 | `app/features/roles.py`, `app/security.py`, `app/templates/admin.html`; [Issue #5](https://github.com/BryanF23/my-app-studio/issues/5); branch `app-003-admin-roles`; PR pending. | Foundation: 96 passed, 2 skipped, 2 deselected. APP-003 contracts: 18 passed. Chromium: 2 passed. Black and Pylint passed. Learner observations recorded in `LEARNING.md`. | Server-side role verification kept. Local checks passed; GitHub PR, CI, and merge pending. |
 
 The instructor's reference branches show possible implementations. They do not establish this repository's completion or the learner's own reasoning.
